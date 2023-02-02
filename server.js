@@ -4,6 +4,7 @@ const cors = require("cors");
 const app = express()
 const charactersRoute = require("./route/charactersRoute")
 const posterRoute = require("./route/posterRoute")
+const comicRoute = require("./route/comicRoute")
 require('dotenv').config();
 require("./connection/conn");
 
@@ -14,6 +15,7 @@ app.use(express.json());
 
 app.use("/chainsawman/v1", charactersRoute);
 app.use("/chainsawman/v1", posterRoute);
+app.use("/chainsawman/v1", comicRoute);
 
 
 app.listen(3000, () => {
